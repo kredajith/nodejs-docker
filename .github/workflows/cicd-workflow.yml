@@ -29,7 +29,7 @@ jobs:
         env:
           ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
           IMAGE_TAG: ${{ github.sha }}
-          REPOSITORY: nodejs-docker-to-delete
+          REPOSITORY: nodejs_docker_to_delete
         run: |
           # Build a docker container and
           # push it to ECR so that it can
@@ -42,7 +42,7 @@ jobs:
         id: task-def
         uses: aws-actions/amazon-ecs-render-task-definition@v1
         with:
-          task-definition: nodejs-docker-task-definition-to-delete.json 
+          task-definition: nodejs_docker_task_definition_to_delete.json 
           container-name: nodejs-docker-to-delete
           image: ${{ steps.build-image.outputs.image }}  
             
@@ -50,6 +50,6 @@ jobs:
         uses: aws-actions/amazon-ecs-deploy-task-definition@v1
         with:
           task-definition: ${{ steps.task-def.outputs.task-definition }}
-          service: nodejs-docker-service
-          cluster: nodejs-docker-to-delete
+          service: nodejs_docker_service_to_delete
+          cluster: nodejs_docker_cluster_to_delete
           wait-for-service-stability: true    

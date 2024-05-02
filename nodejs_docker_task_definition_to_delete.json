@@ -1,9 +1,9 @@
 {
-    "taskDefinitionArn": "arn:aws:ecs:us-east-2:846458317261:task-definition/nodejs-docker-task-definition-to-delete:1",
+    "taskDefinitionArn": "arn:aws:ecs:us-east-2:846458317261:task-definition/nodejs_docker_task_definition_to_delete:2",
     "containerDefinitions": [
         {
             "name": "nodejs-docker-to-delete",
-            "image": "public.ecr.aws/k9k5m2f3/nodejs-docker-to-delete",
+            "image": "public.ecr.aws/k9k5m2f3/nodejs_docker_to_delete",
             "cpu": 0,
             "portMappings": [
                 {
@@ -24,7 +24,7 @@
                 "logDriver": "awslogs",
                 "options": {
                     "awslogs-create-group": "true",
-                    "awslogs-group": "/ecs/nodejs-docker-task-definition-to-delete",
+                    "awslogs-group": "/ecs/nodejs_docker_task_definition_to_delete",
                     "awslogs-region": "us-east-2",
                     "awslogs-stream-prefix": "ecs"
                 },
@@ -33,11 +33,11 @@
             "systemControls": []
         }
     ],
-    "family": "nodejs-docker-task-definition-to-delete",
+    "family": "nodejs_docker_task_definition_to_delete",
     "taskRoleArn": "arn:aws:iam::846458317261:role/ecsTaskExecutionRole",
     "executionRoleArn": "arn:aws:iam::846458317261:role/ecsTaskExecutionRole",
     "networkMode": "awsvpc",
-    "revision": 1,
+    "revision": 2,
     "volumes": [],
     "status": "ACTIVE",
     "requiresAttributes": [
@@ -77,7 +77,7 @@
         "cpuArchitecture": "X86_64",
         "operatingSystemFamily": "LINUX"
     },
-    "registeredAt": "2024-04-30T09:34:59.143Z",
+    "registeredAt": "2024-05-02T07:40:46.701Z",
     "registeredBy": "arn:aws:iam::846458317261:user/ajith",
     "tags": []
 }
